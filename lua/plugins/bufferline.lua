@@ -1,5 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
+	dependencies = { "nvim-mini/mini.nvim" },
 	event = "VeryLazy",
 	keys = {
 		{ "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
@@ -23,6 +24,10 @@ return {
 			end,
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = false,
+			diagnostics_indicator = function(count, level, diagnostics_dict, context)
+				local icon = level:match("error") and " " or " "
+				return " " .. icon .. count
+			end,
 			offsets = {
 				{
 					highlight = "Directory",
@@ -32,6 +37,15 @@ return {
 					filetype = "snacks_layout_box",
 				},
 			},
+			---@param opts bufferline.IconFetcherOpts
+			get_element_icon = function(opts)
+        local ok, icons = pcall(require, "mini.icons")
+        if not ok then
+          return nil
+        end
+        local icon, hl = icons.get("filetype", opts.filetype)
+        return icon, hl
+			end,
 		},
 	},
 	config = function(_, opts)

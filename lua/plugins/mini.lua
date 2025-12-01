@@ -1,13 +1,12 @@
 return {
 	"nvim-mini/mini.nvim",
-	event = "VeryLazy",
 	config = function()
 		require("mini.ai").setup({ n_lines = 200 })
 		require("mini.comment").setup()
 		require("mini.diff").setup()
 		require("mini.git").setup()
 		require("mini.move").setup()
-		require("mini.operators").setup()
+		-- require("mini.operators").setup()
 		require("mini.icons").setup()
 		require("mini.pairs").setup({
 			modes = { insert = true, command = true, terminal = false },
@@ -28,12 +27,9 @@ return {
 			},
 		})
 		require("mini.map").setup()
-		require("mini.trailspace").setup()
 	end,
 	keys = {
 		{ "<leader>=", "<CMD>lua MiniMap.toggle()<CR>", desc = "Toggle Mini Map" },
-		{ "<leader>$", "<CMD>lua MiniTrailspace.trim()<CR>", desc = "Trime All Whitespaces" },
-		{ "<leader>G", "<CMD>lua MiniTrailspace.trim_last_line()<CR>", desc = "Trim All Last Line" },
 		{ "<leader>-", "<CMD>lua MiniFiles.open()<CR>", desc = "Toggle Mini Map" },
 	},
 }

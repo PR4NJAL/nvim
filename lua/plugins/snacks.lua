@@ -3,8 +3,9 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
+		animate = { enabled = true },
 		bigfile = { enabled = true },
-		dashboard = { enabled = false },
+		dashboard = { enabled = true },
 		debug = { enabled = true },
 		dim = { enabled = true },
 		explorer = { enabled = true },
@@ -44,6 +45,13 @@ return {
 				Snacks.picker.smart()
 			end,
 			desc = "Smart Find Files",
+		},
+		{
+			"<leader>xx",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Toggle Diagnostics",
 		},
 		{
 			"<leader>:",
@@ -179,7 +187,7 @@ return {
 			desc = "Registers",
 		},
 		{
-			"<leader>f/",
+			"<leader>/",
 			function()
 				Snacks.picker.search_history()
 			end,
@@ -249,7 +257,7 @@ return {
 			desc = "Resume",
 		},
 		{
-			"<leader>fu",
+			"<leader>u",
 			function()
 				Snacks.picker.undo()
 			end,
@@ -262,7 +270,6 @@ return {
 			end,
 			desc = "Colorschemes",
 		},
-		-- LSP
 		{
 			"grd",
 			function()
