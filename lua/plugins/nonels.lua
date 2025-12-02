@@ -1,6 +1,5 @@
 return {
 	"nvimtools/none-ls.nvim",
-	events = { "BufWritePre", "BufNewFile" },
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		require("mini.trailspace").setup()

@@ -1,7 +1,6 @@
 return {
 	"saghen/blink.cmp",
 	version = "1.*",
-	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"folke/lazydev.nvim",
 		"nvim-mini/mini.nvim",

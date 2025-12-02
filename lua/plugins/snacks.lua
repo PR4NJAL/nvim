@@ -47,6 +47,13 @@ return {
 			desc = "Smart Find Files",
 		},
 		{
+			"<leader>bd",
+			function()
+				Snacks.bufdelete()
+			end,
+			desc = "Delete Current Buffer",
+		},
+		{
 			"<leader>xx",
 			function()
 				Snacks.picker.diagnostics()
