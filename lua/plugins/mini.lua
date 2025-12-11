@@ -2,12 +2,12 @@ return {
 	"nvim-mini/mini.nvim",
 	config = function()
 		require("mini.ai").setup({ n_lines = 200 })
+		require("mini.basics").setup()
 		require("mini.comment").setup()
-		require("mini.diff").setup()
-		require("mini.git").setup()
 		require("mini.move").setup()
 		-- require("mini.operators").setup()
 		require("mini.icons").setup()
+		MiniIcons.mock_nvim_web_devicons()
 		require("mini.pairs").setup({
 			modes = { insert = true, command = true, terminal = false },
 			skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
@@ -15,6 +15,7 @@ return {
 			skip_unbalanced = true,
 			markdown = true,
 		})
+		require("mini.sessions").setup()
 		require("mini.surround").setup()
 		require("mini.files").setup()
 		require("mini.hipatterns").setup({
@@ -26,10 +27,8 @@ return {
 				hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
 			},
 		})
-		require("mini.map").setup()
 	end,
 	keys = {
-		{ "<leader>=", "<CMD>lua MiniMap.toggle()<CR>", desc = "Toggle Mini Map" },
-		{ "<leader>-", "<CMD>lua MiniFiles.open()<CR>", desc = "Toggle Mini Map" },
+		{ "<leader>=", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", desc = "Open Oil" },
 	},
 }

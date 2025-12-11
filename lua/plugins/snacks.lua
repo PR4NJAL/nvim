@@ -54,11 +54,11 @@ return {
 			desc = "Delete Current Buffer",
 		},
 		{
-			"<leader>xx",
+			"<leader>fd",
 			function()
 				Snacks.picker.diagnostics()
 			end,
-			desc = "Toggle Diagnostics",
+			desc = "View Current Buffer Diagnostics",
 		},
 		{
 			"<leader>:",

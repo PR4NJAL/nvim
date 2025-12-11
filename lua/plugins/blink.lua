@@ -29,7 +29,7 @@ return {
 					lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
 				},
 			},
-			fuzzy = { implementation = "prefer_rust" },
+			fuzzy = { implementation = "lua" },
 			signature = { enabled = true },
 		})
 	end,
