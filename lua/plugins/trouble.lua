@@ -1,5 +1,6 @@
 return {
 	"folke/trouble.nvim",
+	dependencies = { "nvim-mini/mini.nvim" },
 	opts = {},
 	cmd = "Trouble",
 	keys = {

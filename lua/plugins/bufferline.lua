@@ -24,7 +24,7 @@ return {
 			end,
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = false,
-			diagnostics_indicator = function(count, level, diagnostics_dict, context)
+			diagnostics_indicator = function(count, level, _, _)
 				local icon = level:match("error") and " " or " "
 				return " " .. icon .. count
 			end,
@@ -37,15 +37,6 @@ return {
 					filetype = "snacks_layout_box",
 				},
 			},
-			---@param opts bufferline.IconFetcherOpts
-			get_element_icon = function(opts)
-        local ok, icons = pcall(require, "mini.icons")
-        if not ok then
-          return nil
-        end
-        local icon, hl = icons.get("filetype", opts.filetype)
-        return icon, hl
-			end,
 		},
 	},
 	config = function(_, opts)
