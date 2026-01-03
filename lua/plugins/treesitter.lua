@@ -1,6 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	branch = "master",
+	branch = "main",
 	lazy = false,
 	build = ":TSUpdate",
 	opts = {
@@ -71,5 +71,5 @@ return {
 		},
 	},
 	{ "nvim-treesitter/nvim-treesitter-context" },
-	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+	{ "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
 }
